@@ -3,7 +3,8 @@ const input = document.querySelector("#validation-input");
 input.addEventListener('blur', onCheckingNumber);
 
 function onCheckingNumber(event) {
-    if (event.currentTarget.value.length >= input.getAttribute('data-length')) {
+    input.classList.remove("valid", "invalid");
+    if (event.currentTarget.value.length === Number(input.getAttribute('data-length'))) {
         input.classList.add("valid");
     }
     else {
